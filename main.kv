@@ -1,0 +1,57 @@
+#:kivy 2.2.1
+
+<Text>:
+    font_name: "assets/images/04B_19.ttf"
+    font_size: 60
+    color: (1, 1, 1)
+    disabled_color: (1, 1, 1, 0)
+
+<Environment>:
+    orientation: "vertical"
+    background: background
+    ground: ground
+    pipes_queue: pipes_queue
+    widget: widget
+    width: self.background.width
+    height: self.background.height + self.ground.height
+
+    Widget:
+        id: widget
+        size: root.background.size
+        pos: 0, root.ground.height
+        BackgroundImage:
+            id: background
+            pos: 0, root.ground.height
+        
+        PipesQueue:
+            id: pipes_queue
+
+    GroundImage:
+        id: ground
+
+<Bird>:
+    bird_img: bird_img
+    Image:
+        id: bird_img
+        source: "atlas://assets/images/bird_anim/wing-up"
+        pos: 0.25 * root.width, (root.height - self.height) / 2
+        size: self.texture.size
+
+<Pipes>:
+    top_img: top_img
+    bottom_img: bottom_img
+    width: top_img.width
+    height: 2.2 * top_img.height
+    orientation: "vertical"
+    spacing: root.difficulty * top_img.height
+    Image:
+        id: top_img
+        source: "assets/images/pipe_top.png"
+        size_hint: None, None
+        size: self.texture.size
+    
+    Image:
+        id: bottom_img
+        source: "assets/images/pipe_bottom.png"
+        size_hint: None, None
+        size: self.texture.size
