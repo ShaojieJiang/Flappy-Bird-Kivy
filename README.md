@@ -1,3 +1,9 @@
+
+
+
+https://github.com/ShaojieJiang/Flappy-Bird-Kivy/assets/26806376/13c85e85-95ed-46ac-a8af-303099c44196
+
+
 ## Get started
 
 Run `pip install -r requirements.txt`.
